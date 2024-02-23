@@ -45,7 +45,7 @@
       background-color: var(--bg);
       box-shadow: 10px 8px 21px -11px rgba(39,51,49,1);;
       align-items: center;
-      padding-left: 20px;
+      padding:20px;
       
 
       .lc-img{
@@ -59,7 +59,8 @@
         .lc-distance{
           position: absolute;
           background-color: var(--white) ;
-          border: .5px solid black;
+          border: .5px solid var(--primary);
+          color : var(--text-light);
           border-radius: 10px;
           bottom: -5px;
           display: flex;
@@ -75,9 +76,25 @@
         }
       }
 
+      .lc-btn{
+        /* padding-top: 15px; */
+        display: flex;
+        /* position: absolute;  */
+        /* right: 15px; */
+        /* position: fixed; */
+        justify-content: end;
+        float: right;
+
+      }
+      .lc-right {
+        width: 60%;
+        /* display: flex; */
+      }
+
       .lc-list{
         list-style: none;
         padding-left: 15px;
+        padding-bottom: 15px;
         
         li{
           display: flex;
@@ -101,11 +118,16 @@
 
 @media screen and (max-width: 992px) {
   .img{
-    width: 135px !important;
-    height: 135px !important;
+    width: 130px !important;
+    height: 130px !important;
   }
   .lc-list{
     padding-left: 8px !important;
+  }
+
+  .lc-box{
+    gap: 8px !important;
+    padding: 10px !important;
   }
   .lc-distance{
     left: 9px !important;
@@ -147,13 +169,16 @@
   }
   .lc-box{
     height: 148px !important;
-  }
 
+  }
+  
   .lc-list{
     padding-left: 8px !important;
+    padding-top: 8px !important;
+    padding-bottom: 0px !important;
 
     li{
-      padding-top: 13px !important;
+      padding-top: 3px !important;
       font-size: 12px;
     }
   }

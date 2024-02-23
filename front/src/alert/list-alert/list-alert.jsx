@@ -8,15 +8,16 @@ export function ListAlert() {
   const fako = [
     {
       id: 1,
-      location: 'Antsobolo',
+      location: 'Antsobolo, Antananarivo',
       date: '21/02/24',
-      coordonne: 'any ehh',
+      coordonne: 'lavitra',
+      
       image: 'assets/sary.jpg',
       distance: '10m',
     },
     {
       id: 2,
-      location: 'Antsobolo',
+      location: 'Antsobolo, Avaradrano',
       date: '21/02/24',
       coordonne: 'any ehh',
       image: 'assets/sary.jpg',

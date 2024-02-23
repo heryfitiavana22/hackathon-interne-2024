@@ -4,10 +4,8 @@ import DateIcon from '../../../components/icons/date';
 import CoordonneIcon from '../../../components/icons/coordonne';
 import { Button } from '../../../components/button/button';
 
-
 export default function CardAlert({ donnee }) {
   // const [data, usedata] = useState(donnee);
-
 
   return (
     <>
@@ -19,18 +17,20 @@ export default function CardAlert({ donnee }) {
             </div>
             <img src={item.image} alt="sary" className="img" />
           </div>
-          <ul className="lc-list">
-            <li>
-              <LocationIcon /> {item.location}
-            </li>
-            <li className="grey">
-              <DateIcon /> {item.date}
-            </li>
-            <li className="grey">
-              <CoordonneIcon /> {item.coordonne}
-            </li>
-          </ul>
-          <Button className="lc-btn">Prendre</Button>
+          <div className="lc-right">
+            <ul className="lc-list">
+              <li>
+                <LocationIcon /> {item.location}
+              </li>
+              <li className="grey">
+                <DateIcon /> {item.date}
+              </li>
+              <li className="grey">
+                <CoordonneIcon /> {item.coordonne}
+              </li>
+            </ul>
+            <Button className="lc-btn">Prendre</Button>
+          </div>
         </div>
       ))}
     </>
