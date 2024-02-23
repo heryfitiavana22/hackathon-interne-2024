@@ -6,6 +6,10 @@
 
 :root {
   font-family: sans-serif;
+  --primary: #688e43;
+  --secondary: #8da861;
+  --text: #121212;
+  --bg: #fff;
 }
 
 a {
