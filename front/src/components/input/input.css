@@ -1,24 +1,23 @@
 .input-container {
-    display: grid;
+  display: grid;
 }
 
 .input-container-flex {
-    display: flex;
-    gap: 4px;
-    align-items: center;
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .input {
-    border: 1.5px solid #e7e7e9;
-    outline: none;
-    align-items: center;
-    padding: 8px;
-    display: flex;
-    border-radius: 5px;
+  border: 1.5px solid #e7e7e9;
+  outline: none;
+  align-items: center;
+  padding: 8px;
+  display: flex;
+  border-radius: 5px;
 }
 .input:hover {
-    border-color: rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 0 4px rgba(234, 100, 217, 0.1);
-    box-shadow: 0 0 0 4px var(--primary-50);
+  border-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 0 4px rgba(234, 100, 217, 0.1);
+  box-shadow: 0 0 0 4px var(--primary-50);
 }
