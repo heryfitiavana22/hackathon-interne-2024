@@ -38,7 +38,7 @@ export function Payment() {
                 {...register('montant', { required: true })}
               />
               {errors.montant && (
-                <p className="alert ">This field is required</p>
+                <p className="alert ">Information obligatoire</p>
               )}
             </div>
 
@@ -51,7 +51,7 @@ export function Payment() {
                 {...register('cardNumber', { required: true })}
               />
               {errors.cardNumber && (
-                <p className="alert ">This field is required</p>
+                <p className="alert ">Information obligatoire</p>
               )}
             </div>
 
@@ -61,7 +61,7 @@ export function Payment() {
                   placeholder="MM/AA"
                   {...register('date', { required: true })}
                 />
-                {errors.date && <p className="alert">This field is required</p>}
+                {errors.date && <p className="alert">Information obligatoire</p>}
               </div>
               <div className="item-input">
                 <Input
@@ -69,7 +69,7 @@ export function Payment() {
                   {...register('codeCVC', { required: true })}
                 />
                 {errors.codeCVC && (
-                  <p className="alert">This field is required</p>
+                  <p className="alert">Information obligatoire</p>
                 )}
               </div>
             </div>

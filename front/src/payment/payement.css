@@ -7,7 +7,7 @@
   background-size: cover;
 }
 .payment .message h1 {
-  color:#fff;
+  color:var(--white-primary);
 }
 .payment .message img {
   width: 345px;
