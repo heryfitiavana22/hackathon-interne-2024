@@ -42,7 +42,7 @@ export function PaymentForm({}: PaymentFormProps) {
       <div className="form-container">
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="title">
-            <h2>Payer par carte</h2>
+            <h2 className='title-text'>Payer par carte</h2>
           </div>
 
           <div>
