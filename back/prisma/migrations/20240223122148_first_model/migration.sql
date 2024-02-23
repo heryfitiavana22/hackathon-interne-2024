@@ -1,0 +1,23 @@
+-- CreateTable
+CREATE TABLE "Alert" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "imageURL" TEXT NOT NULL,
+    "place" TEXT NOT NULL,
+    "latitude" TEXT NOT NULL,
+    "longitude" TEXT NOT NULL,
+    "isPicked" BOOLEAN NOT NULL,
+    "state" TEXT NOT NULL,
+    "truckId" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    CONSTRAINT "Alert_truckId_fkey" FOREIGN KEY ("truckId") REFERENCES "Truck" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Truck" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "pseudo" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);

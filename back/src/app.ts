@@ -3,11 +3,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { authRouter } from './auth/auth.routes';
 import { verifyToken } from './auth/auth.middleware';
-import { userRouter } from './user/user.routes';
 import { ZodError } from 'zod';
 import { ResponseAPI } from './helpers/response.api';
 import { CustomerError } from './helpers/customer-error';
-import { Hash } from './helpers/hash';
+import { truckRouter } from './truck/truck.routes';
+import { alertRouter } from './alert/alert.routes';
 
 dotenv.config();
 
@@ -24,7 +24,8 @@ app.get('/', (req, res) => {
 });
 app.use(API_PREFIX, authRouter);
 app.use(verifyToken);
-app.use(API_PREFIX, userRouter);
+app.use(API_PREFIX, truckRouter);
+app.use(API_PREFIX, alertRouter);
 app.use((error: any, request: Request, response: Response, next: any) => {
   // console.log(error);
   if (error instanceof ZodError)
