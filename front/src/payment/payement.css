@@ -1,0 +1,115 @@
+@import url('../index.css');
+
+.payment {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/back.svg');
+  background-size: cover;
+}
+.payment .message h1 {
+  color:#fff;
+}
+.payment .message img {
+  width: 345px;
+  height: 345px;
+}
+.payment .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment .container .message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+.payment .form-container {
+  border-radius: 10px;
+  width: 45%;
+  height: 60vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.payment .form-container .title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.payment .form-container form {
+  display: flex;
+  width: 98%;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+  gap: 30px;
+}
+.payment .form-container form .item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.payment .form-container form .item .item-input {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.payment .form-container form .item .input-form {
+  border: none;
+  width: 100%;
+  height: 30px;
+}
+.button-payer {
+  background-color: #5af896;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+.input {
+  width: 100%;
+}
+.alert {
+  color: #da6a6a;
+}
+
+@media screen and (max-width: 920px) {
+  .payment .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payment .container .message {
+    margin: auto;
+    width: 100%; /* Réduire la largeur du message sur les écrans plus larges */
+  }
+
+  .payment .form-container {
+    width: 90%;
+    margin: auto; /* Réduire la largeur du formulaire sur les écrans plus larges */
+  }
+
+  .payment .form-container form .item {
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+  }
+
+  .payment .form-container form .item .item-input {
+    width: 100%; /* Réduire la largeur des champs de saisie pour les aligner correctement sur les écrans plus larges */
+  }
+
+  .payment .form-container form .item .item-input:last-child {
+    margin-right: 0; /* Supprimer la marge droite du dernier champ de saisie */
+  }
+
+  .payment .message img {
+    width: 145px;
+    height: 145px;
+  }
+}
