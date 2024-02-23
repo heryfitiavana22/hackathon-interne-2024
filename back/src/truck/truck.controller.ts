@@ -1,15 +1,15 @@
 import { NextFunction, Request, Response } from 'express';
-import { UserService } from './user.service';
+import { TruckService } from './truck.service';
 import { ResponseAPI } from '../helpers/response.api';
-import { UserTransformer } from './transformers/user.transformer';
-import { userSchemaAdd } from './validators/user.zod';
+import { TruckTransformer } from './transformers/truck.transformer';
+import { truckSchemaAdd } from './validators/truck.zod';
 import { Hash } from '../helpers/hash';
 import { AccessToken, RefreshToken } from '../auth/auth.sign';
 import { CustomerError } from '../helpers/customer-error';
-import { CreateUserInput } from './interfaces/user.interface';
+import { CreateTruckInput } from './interfaces/truck.interface';
 
-export class UserController {
-  constructor(private service: UserService) {}
+export class TruckController {
+  constructor(private service: TruckService) {}
 
   findById = async (
     request: Request<{ id: string }>,
@@ -19,9 +19,9 @@ export class UserController {
     try {
       const id = Number(request.params.id);
       if (isNaN(id)) throw new CustomerError(400, 'ID must be a number');
-      const user = await this.service.findById(id);
-      if (!user) throw new CustomerError(400, 'User not found');
-      const data = UserTransformer.toUIone(user);
+      const truck = await this.service.findById(id);
+      if (!truck) throw new CustomerError(400, 'Truck not found');
+      const data = TruckTransformer.toUIone(truck);
       response.send(ResponseAPI.success({ data }));
     } catch (error) {
       next(error);
@@ -32,8 +32,8 @@ export class UserController {
     const token = request.headers['x-access-token'] as string;
 
     try {
-      const user = AccessToken.verify(token);
-      response.send(ResponseAPI.success({ data: user }));
+      const truck = AccessToken.verify(token);
+      response.send(ResponseAPI.success({ data: truck }));
     } catch (error) {
       response
         .status(403)
@@ -43,13 +43,13 @@ export class UserController {
 
   create = async (request: Request, response: Response, next: NextFunction) => {
     try {
-      const parsed = userSchemaAdd.parse(request.body);
-      const user = parsed as CreateUserInput;
-      const newUser = await this.service.create({
-        ...user,
-        password: Hash.make(user.password),
+      const parsed = truckSchemaAdd.parse(request.body);
+      const truck = parsed as CreateTruckInput;
+      const newTruck = await this.service.create({
+        ...truck,
+        password: Hash.make(truck.password),
       });
-      const data = UserTransformer.toUIone(newUser);
+      const data = TruckTransformer.toUIone(newTruck);
       return response.send(ResponseAPI.success({ data }));
     } catch (error) {
       next(error);
@@ -65,10 +65,10 @@ export class UserController {
       const id = Number(request.params.id);
       if (isNaN(id)) throw new CustomerError(400, 'ID must be a number');
 
-      const user = await this.service.deleteById(id);
-      // const data = UserTransformer.toUIone(user);
+      const truck = await this.service.deleteById(id);
+      const data = TruckTransformer.toUIone(truck);
       response.send(
-        ResponseAPI.success({ data: null, message: 'Delete successful' }),
+        ResponseAPI.success({ data, message: 'Delete successful' }),
       );
     } catch (error) {
       next(error);

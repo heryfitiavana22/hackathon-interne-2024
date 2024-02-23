@@ -12,6 +12,10 @@
   --bg: #fff;
   --bg2:#BBBBBB;
   --text-light: #a1a1a1;
+  --white-primary: #fff;
+  --success: green;
+  --danger: danger;
+  --info: blue;
 }
 
 a {

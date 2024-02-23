@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Alert {
+  id        Int      @id @default(autoincrement())
+  imageURL  String
+  place     String
+  latitude  String
+  longitude String
+  isPicked  Boolean
+  state     String
+  truckId   Int?
+  truck     Truck?   @relation(fields: [truckId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Truck {
+  id        Int      @id @default(autoincrement())
+  pseudo    String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Alert     Alert[]
+}
