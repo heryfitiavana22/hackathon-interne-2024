@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  justify-content: center;
+  /* justify-content: center; */
   /* background-color: var(--secondary); */
   background-image: url(assets/pattern.svg);
+  background-repeat: repeat;
   width: 100%;
+  min-height: 100vh;
   padding: 14px;
 
   .lc-text{
