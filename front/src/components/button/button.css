@@ -43,6 +43,27 @@
         }
     }
 
+    &.btn-secondary {
+        background-color: var(--secondary);
+
+        &:hover {
+            background-color: var(--white-primary);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+
+        &.outline {
+            background-color: var(--white-primary);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+
+            &:hover {
+                background-color: var(--secondary);
+                color: var(--white-primary);
+            }
+        }
+    }
+
     &.btn-success {
         background-color: var(--success);
 
