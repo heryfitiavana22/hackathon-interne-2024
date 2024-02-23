@@ -10,9 +10,10 @@ import AjoutIcons from './../components/icons/ajout';
 import PayementIcons from './../components/icons/payement';
 import TrashIcons from './../components/icons/trash';
 import AlertIcons from './../components/icons/alert';
+import { Link } from 'react-router-dom';
 
 export function Home() {
-  const { refetchUser } = useAuth();
+  const { status } = useAuth();
   const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
@@ -40,8 +41,19 @@ export function Home() {
               <span className="maka">Maka</span>Fako
             </p>
           </div>
-
-          <Button className="login">Connecter</Button>
+          {status == 'guest' ? (
+            <Link to={'/login'}>
+              <Button className="login" size="lg">
+                Se connecter
+              </Button>
+            </Link>
+          ) : (
+            <Link to={'/list'}>
+              <Button className="login" size="lg">
+                Taches
+              </Button>
+            </Link>
+          )}
         </div>
 
         <div className="paragraphe">
@@ -61,15 +73,17 @@ export function Home() {
 
         <div className="btnListe">
           <div className="btnAlert">
-            <Button variant="secondary" size="md">
+            <Button variant="secondary" size="lg">
               <AjoutIcons /> Lancer une alerte
             </Button>
           </div>
 
           <div className="btnPyement">
-            <Button variant="primary" size="lg">
-              <PayementIcons /> Faire un don
-            </Button>
+            <Link to={'/payment'}>
+              <Button variant="primary" size="lg">
+                <PayementIcons /> Faire un don
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

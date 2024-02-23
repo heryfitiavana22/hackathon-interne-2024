@@ -2,7 +2,11 @@ import { NextFunction, Request, Response } from 'express';
 import { AlertService } from './alert.service';
 import { ResponseAPI } from '../helpers/response.api';
 import { AlertTransformer } from './transformers/alert.transformer';
-import { alertSchemaAdd, alertSchemaUpdate } from './validators/alert.zod';
+import {
+  alertNotPickedQuerySchema,
+  alertSchemaAdd,
+  alertSchemaUpdate,
+} from './validators/alert.zod';
 import { Hash } from '../helpers/hash';
 import { AccessToken, RefreshToken } from '../auth/auth.sign';
 import { CustomerError } from '../helpers/customer-error';
@@ -10,7 +14,7 @@ import {
   CreateAlertInput,
   UpdateAlertInput,
 } from './interfaces/alert.interface';
-import { AlertState } from './alert.helper';
+import { AlertState, sortByProximity } from './alert.helper';
 
 export class AlertController {
   constructor(private service: AlertService) {}
@@ -21,11 +25,13 @@ export class AlertController {
     next: NextFunction,
   ) => {
     try {
+      const parsed = alertNotPickedQuerySchema.parse(request.query);
       const alerts = await this.service.find({
         where: { state: AlertState.NOT_PICKED },
       });
       const data = AlertTransformer.toUI(alerts);
-      response.send(ResponseAPI.success({ data }));
+      const sorted = sortByProximity(parsed as any, data);
+      response.send(ResponseAPI.success({ data: sorted }));
     } catch (error) {
       next(error);
     }

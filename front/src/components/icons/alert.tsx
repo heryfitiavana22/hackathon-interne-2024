@@ -1,6 +1,4 @@
-import * as React from "react"
-
-const AlertIcons= (props) => (
+const AlertIcons = (props: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={80}
@@ -19,7 +17,8 @@ const AlertIcons= (props) => (
     <path
       fill="#688e43"
       d="M10.88 17.15a1.12 1.12 0 0 1 1.13-1.12 1.11 1.11 0 1 1-1.13 1.12Zm.36-2.73L11.1 9.2a.898.898 0 0 1 1.262-.917.9.9 0 0 1 .49.545c.039.12.052.247.039.372l-.13 5.22a.76.76 0 0 1-1.52 0Z"
-    />xmlns
+    />
+    xmlns
   </svg>
-)
-export default AlertIcons
+);
+export default AlertIcons;

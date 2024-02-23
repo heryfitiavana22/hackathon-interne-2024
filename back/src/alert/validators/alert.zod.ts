@@ -18,4 +18,10 @@ export const alertSchemaAdd = alertSchema.omit({
 export const alertSchemaUpdate = alertSchemaAdd.partial();
 
 export const alertQuerySchema = z.object({}).strict();
+export const alertNotPickedQuerySchema = z
+  .object({
+    latitude: z.string(),
+    longitude: z.string(),
+  })
+  .strict();
 export const findUserSchema = alertQuerySchema.omit({ id: true });

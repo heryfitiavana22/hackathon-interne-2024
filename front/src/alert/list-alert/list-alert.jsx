@@ -3,6 +3,15 @@ import { Button } from './../../components/button/button';
 import './list-alert.css';
 import CardAlert from './components/card-alert';
 import { H1 } from '../../components/typography/typography';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { AlertService } from '../alert.service';
+import { Loading } from '../../components/loading/loading';
 
 export function ListAlert() {
   const fako = [
@@ -47,18 +56,20 @@ export function ListAlert() {
       distance: '10m',
     },
   ];
+  const { isLoading, data } = useQuery({
+    queryKey: ['todos'],
+    queryFn: AlertService.getNotPicked,
+  });
+  if (isLoading) return <Loading />;
 
   return (
     <>
       <div className="list-content">
         <div className="lc-text">
           <H1> Liste des alerts</H1>
-          <p>
-            Ici, vous pouvez voir toutes les listes de toutes les alertes signalées dans toute la ville.
-          </p>
         </div>
         <div className="lc-container">
-          <CardAlert donnee={fako} />
+          <CardAlert data={data.data} />
         </div>
       </div>
     </>
