@@ -10,6 +10,11 @@
   --secondary: #8da861;
   --text: #121212;
   --bg: #b0b0b0;
+  --bg: #fff;
+  --white-primary: #fff;
+  --success: green;
+  --danger: danger;
+  --info: blue;
 }
 
 a {
