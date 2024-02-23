@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import LocationIcon from '../../../components/icons/loction';
 import DateIcon from '../../../components/icons/date';
 import CoordonneIcon from '../../../components/icons/coordonne';
+import { Button } from '../../../components/button/button';
+
 
 export default function CardAlert({ donnee }) {
   // const [data, usedata] = useState(donnee);
@@ -28,6 +30,7 @@ export default function CardAlert({ donnee }) {
               <CoordonneIcon /> {item.coordonne}
             </li>
           </ul>
+          <Button className="lc-btn">Prendre</Button>
         </div>
       ))}
     </>
