@@ -1,33 +1,28 @@
-import React, { useState } from 'react';
 import LocationIcon from '../../../components/icons/loction';
 import DateIcon from '../../../components/icons/date';
-import CoordonneIcon from '../../../components/icons/coordonne';
 import { Button } from '../../../components/button/button';
+import { Alert } from '../../alert.type';
+import { DateHelper } from '../../../helpers/date-helper';
 
-
-export default function CardAlert({ donnee }) {
-  // const [data, usedata] = useState(donnee);
-
+export default function CardAlert({ data }: CardAlertProps) {
+  // const [data, usedata] = useState(data);
 
   return (
     <>
-      {donnee.map((item) => (
+      {data.map((item) => (
         <div className="lc-box" key={item.id}>
           <div className="lc-img">
             <div className="lc-distance">
-              <p>{item.distance} pres de vous</p>
+              <p>{10} pres de vous</p>
             </div>
-            <img src={item.image} alt="sary" className="img" />
+            <img src={item.imageURL} alt="sary" className="img" />
           </div>
           <ul className="lc-list">
             <li>
-              <LocationIcon /> {item.location}
+              <LocationIcon /> {item.place}
             </li>
             <li className="grey">
-              <DateIcon /> {item.date}
-            </li>
-            <li className="grey">
-              <CoordonneIcon /> {item.coordonne}
+              <DateIcon /> {DateHelper.format(item.createdAt)}
             </li>
           </ul>
           <Button className="lc-btn">Prendre</Button>
@@ -36,3 +31,7 @@ export default function CardAlert({ donnee }) {
     </>
   );
 }
+
+type CardAlertProps = {
+  data: Alert[];
+};
