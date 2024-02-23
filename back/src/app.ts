@@ -8,6 +8,7 @@ import { ResponseAPI } from './helpers/response.api';
 import { CustomerError } from './helpers/customer-error';
 import { truckRouter } from './truck/truck.routes';
 import { alertRouter } from './alert/alert.routes';
+import { paymentRouter } from './payment/payment.routes';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
   res.send({ message: 'API working' });
 });
 app.use(API_PREFIX, authRouter);
+app.use(API_PREFIX, paymentRouter);
 app.use(verifyToken);
 app.use(API_PREFIX, truckRouter);
 app.use(API_PREFIX, alertRouter);
