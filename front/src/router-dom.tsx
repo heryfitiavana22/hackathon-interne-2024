@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Login } from './auth/login/login';
 import { Home } from './home/home';
-import { Payment } from './payment/Payment';
+import { Payment } from './payment/payment';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -10,10 +10,9 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path:'payment',
-    element:<Payment/>
-  }
- 
+    path: 'payment',
+    element: <Payment />,
+  },
 ]);
 export function RouterDom() {
   return <RouterProvider router={router} />;

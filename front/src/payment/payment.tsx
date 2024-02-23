@@ -2,12 +2,11 @@ import './payement.css';
 import { Input } from '../components/input/input';
 import { Button } from '../components/button/button';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+
 export function Payment() {
   const {
     handleSubmit,
     register,
-    control,
     formState: { errors },
     reset,
   } = useForm();
@@ -21,7 +20,7 @@ export function Payment() {
         <div className="message">
           <h1>Faites partie du changement</h1>
           <h2>soutenez le développement urbain</h2>
-		  <img src="trash.png" alt="" className='trash-image' />
+          <img src="trash.png" alt="" className="trash-image" />
         </div>
 
         <div className="form-container">
@@ -35,7 +34,7 @@ export function Payment() {
                 type="text"
                 label="Montant:"
                 className="input"
-                placeholder='Ussd $:'
+                placeholder="Ussd $:"
                 {...register('montant', { required: true })}
               />
               {errors.montant && (
@@ -62,7 +61,9 @@ export function Payment() {
                   placeholder="MM/AA"
                   {...register('date', { required: true })}
                 />
-                {errors.date && <p className="alert">Information obligatoire</p>}
+                {errors.date && (
+                  <p className="alert">Information obligatoire</p>
+                )}
               </div>
               <div className="item-input">
                 <Input
@@ -74,9 +75,7 @@ export function Payment() {
                 )}
               </div>
             </div>
-            <Button type="submit" className="button-payer" >
-              Payer 
-            </Button>
+            <Button className="button-payer">Payer</Button>
           </form>
         </div>
       </div>
