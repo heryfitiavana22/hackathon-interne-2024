@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import { toast } from 'sonner';
 
 export function getContentType<T>(data: T) {
   return data instanceof FormData ? 'multipart/form-data' : 'application/json';
@@ -24,7 +25,7 @@ export function axiosResponseData<T>(
 
 export function resolveError(error: any, resolve: any) {
   if (Object.keys(error).length == 0) {
-    // some toast trigger
+    toast.error('Serveur non lance');
   }
 
   resolve(axiosResponseData<null>(error.response));
