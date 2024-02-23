@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { useLogin } from './use-login';
 import { GuestGuard } from '../../components/guard/guest-guard';
+import { Button } from '../../components/button/button';
 
 export function Login({}: LoginProps) {
   const { onSubmit, register } = useLogin();
@@ -33,7 +34,7 @@ export function Login({}: LoginProps) {
             </div>
 
             <div>
-              <button>Se connecter</button>
+              <Button>Se connecter</Button>
             </div>
           </form>
         </div>
