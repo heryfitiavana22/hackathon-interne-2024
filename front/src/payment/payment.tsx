@@ -35,6 +35,7 @@ export function Payment() {
                 type="text"
                 label="Montant:"
                 className="input"
+                placeholder='Ussd $:'
                 {...register('montant', { required: true })}
               />
               {errors.montant && (
