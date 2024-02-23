@@ -3,8 +3,14 @@ import { useAuth } from '../auth/use-auth';
 import { AuthenticatedGuard } from '../components/guard/authenticated-guard';
 import './home.css';
 import React, { useState, useEffect } from 'react';
-import { H1, H3, H6 } from '../components/typography/typography';
+import { H1, H2, H6 } from '../components/typography/typography';
 import { Button } from '../components/button/button';
+import CamionIcons from './../components/icons/example';
+import AjoutIcons from './../components/icons/ajout';
+import PayementIcons from './../components/icons/payement';
+import TrashIcons from './../components/icons/trash';
+import AlertIcons from './../components/icons/alert';
+
 
 export function Home() {
   const { refetchUser } = useAuth();
@@ -44,18 +50,48 @@ export function Home() {
           <H6 className='paraKely'>Ensemble, rendons notre monde plus propre et plus vert <br /> Unis dans notre engagement pour une terre plus propre.</H6>
         </div>
 
-        <div className="btnAlert">
-          <Button variant='primary' >Alerter</Button>
-        </div>
+        <div className="btnListe">
+          <div className="btnAlert">
+            <Button variant='secondary' > < AjoutIcons/> Alerter</Button>
+          </div>
 
-        <div className="statistique">
-          <H3 className="titreState">Nos state effectuer </H3>
-
-          <div className="NombreCamion">
-            
+          <div className="btnPyement">
+            <Button variant='primary' > < PayementIcons/> Payer</Button>
           </div>
         </div>
+        
+      
       </div>
+
+      <div className="statistique">
+          <H1 className="titreState">Nos stats effectuer </H1>
+
+          <div className='liste'>
+
+            <div className="textCams">
+              <div className="NombreCamion">
+                <CamionIcons className='CamionIcons'/>
+              </div>
+              <p className="nbrs">50</p>
+            </div>
+            
+            <div className="textDechet">
+              <div className="NombreDechet">
+                <TrashIcons className='TrashIcons'/>
+              </div>
+              <p className="nbrs">50</p>
+            </div>
+            
+            <div className="textAlert">
+              <div className="NombreAlert">
+                <AlertIcons className='TrashIcons'/>
+              </div>
+              <p className="nbrs">50</p>
+            </div>
+            
+          </div>
+          
+        </div>
       
     </AuthenticatedGuard>
   );
