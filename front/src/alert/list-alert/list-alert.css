@@ -34,7 +34,8 @@
         }
         .lc-distance{
           position: absolute;
-          background-color: var(--bg2) ;
+          background-color: var(--white) ;
+          border: .5px solid black;
           border-radius: 10px;
           bottom: -5px;
           display: flex;
@@ -54,7 +55,11 @@
         list-style: none;
         padding-left: 15px;
         
-        
+        li{
+          display: flex;
+          align-items: center;
+          gap : 10px
+        }
         .grey{
           color: var(--text-light);
           padding-top: 2px;
@@ -71,7 +76,16 @@
 }
 
 @media screen and (max-width: 992px) {
-  
+  .img{
+    width: 135px !important;
+    height: 135px !important;
+  }
+  .lc-list{
+    padding-left: 8px !important;
+  }
+  .lc-distance{
+    left: 9px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -79,6 +93,9 @@
     display: flex !important;
     flex-direction: column;
     width: 65% !important;
+  }
+  .lc-distance{
+    left: 8px !important;
   }
 }
 @media screen and (max-width: 640px) {
