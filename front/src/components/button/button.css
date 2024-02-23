@@ -1,150 +1,155 @@
 .btn {
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    color: var(--white-primary);
-    transition: all 0.3s ease;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  color: var(--white-primary);
+  transition: all 0.3s ease;
 
-    &.md {
-        padding: 8px 16px;
+  &.lg {
+    padding: 16px 24px;
+    font-size: 20px;
+  }
+
+  &.md {
+    padding: 8px 16px;
+  }
+
+  &.sm {
+    padding: 4px 8px;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &.btn-primary {
+    background-color: var(--primary);
+
+    &:hover {
+      background-color: var(--white-primary);
+      color: var(--primary);
+      border: 1px solid var(--primary);
     }
 
-    &.sm {
-        padding: 4px 8px;
-    }
+    &.outline {
+      background-color: var(--white-primary);
+      color: var(--primary);
+      border: 1px solid var(--primary);
 
-    &.disabled {
-        opacity: 0.5;
-        cursor: default;
-    }
-
-    &.btn-primary {
+      &:hover {
         background-color: var(--primary);
+        color: var(--white-primary);
+      }
+    }
+  }
 
-        &:hover {
-            background-color: var(--white-primary);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
+  &.btn-secondary {
+    background-color: var(--secondary);
 
-        &.outline {
-            background-color: var(--white-primary);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-
-            &:hover {
-                background-color: var(--primary);
-                color: var(--white-primary);
-            }
-        }
+    &:hover {
+      background-color: var(--white-primary);
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
     }
 
-    &.btn-secondary {
+    &.outline {
+      background-color: var(--white-primary);
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
+
+      &:hover {
         background-color: var(--secondary);
+        color: var(--white-primary);
+      }
+    }
+  }
 
-        &:hover {
-            background-color: var(--white-primary);
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-        }
+  &.btn-success {
+    background-color: var(--success);
 
-        &.outline {
-            background-color: var(--white-primary);
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-
-            &:hover {
-                background-color: var(--secondary);
-                color: var(--white-primary);
-            }
-        }
+    &:hover {
+      background-color: var(--white-primary);
+      color: var(--success);
+      border: 1px solid var(--success);
     }
 
-    &.btn-success {
+    &.outline {
+      background-color: var(--white-primary);
+      color: var(--success);
+      border: 1px solid var(--success);
+
+      &:hover {
         background-color: var(--success);
+        color: var(--white-primary);
+      }
+    }
+  }
 
-        &:hover {
-            background-color: var(--white-primary);
-            color: var(--success);
-            border: 1px solid var(--success);
-        }
+  &.btn-danger {
+    background-color: var(--danger);
 
-        &.outline {
-            background-color: var(--white-primary);
-            color: var(--success);
-            border: 1px solid var(--success);
-
-            &:hover {
-                background-color: var(--success);
-                color: var(--white-primary);
-            }
-        }
+    &:hover {
+      background-color: var(--white-primary);
+      color: var(--danger);
+      border: 1px solid var(--danger);
     }
 
-    &.btn-danger {
+    &.outline {
+      background-color: var(--white-primary);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+
+      &:hover {
         background-color: var(--danger);
+        color: var(--white-primary);
+      }
+    }
+  }
 
-        &:hover {
-            background-color: var(--white-primary);
-            color: var(--danger);
-            border: 1px solid var(--danger);
-        }
+  &.btn-info {
+    background-color: var(--info);
 
-        &.outline {
-            background-color: var(--white-primary);
-            color: var(--danger);
-            border: 1px solid var(--danger);
-
-            &:hover {
-                background-color: var(--danger);
-                color: var(--white-primary);
-            }
-        }
+    &:hover {
+      background-color: var(--white-primary);
+      color: var(--info);
+      border: 1px solid var(--info);
     }
 
-    &.btn-info {
+    &.outline {
+      background-color: var(--white-primary);
+      color: var(--info);
+      border: 1px solid var(--info);
+
+      &:hover {
         background-color: var(--info);
+        color: var(--white-primary);
+      }
+    }
+  }
 
-        &:hover {
-            background-color: var(--white-primary);
-            color: var(--info);
-            border: 1px solid var(--info);
-        }
+  &.btn-dark-primary {
+    background-color: var(--dark-primary);
 
-        &.outline {
-            background-color: var(--white-primary);
-            color: var(--info);
-            border: 1px solid var(--info);
-
-            &:hover {
-                background-color: var(--info);
-                color: var(--white-primary);
-            }
-        }
+    &:hover {
+      background-color: var(--white-primary);
+      color: var(--dark-primary);
+      border: 1px solid var(--dark-primary);
     }
 
-    &.btn-dark-primary {
+    &.outline {
+      background-color: var(--white-primary);
+      color: var(--dark-primary);
+      border: 1px solid var(--dark-primary);
+
+      &:hover {
         background-color: var(--dark-primary);
-
-        &:hover {
-            background-color: var(--white-primary);
-            color: var(--dark-primary);
-            border: 1px solid var(--dark-primary);
-        }
-
-        &.outline {
-            background-color: var(--white-primary);
-            color: var(--dark-primary);
-            border: 1px solid var(--dark-primary);
-
-            &:hover {
-                background-color: var(--dark-primary);
-                color: var(--white-primary);
-            }
-        }
+        color: var(--white-primary);
+      }
     }
+  }
 }
