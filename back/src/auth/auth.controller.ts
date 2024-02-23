@@ -1,24 +1,24 @@
 import { NextFunction, Request, Response } from 'express';
-import { UserService } from '../user/user.service';
-import { userSchemaLogin } from '../user/validators/user.zod';
-import { CreateUserInput } from '../user/interfaces/user.interface';
-import { UserTransformer } from '../user/transformers/user.transformer';
+import { TruckService } from '../truck/truck.service';
+import { truckSchemaLogin } from '../truck/validators/truck.zod';
+import { CreateTruckInput } from '../truck/interfaces/truck.interface';
+import { TruckTransformer } from '../truck/transformers/truck.transformer';
 import { AccessToken, RefreshToken } from './auth.sign';
 import { ResponseAPI } from '../helpers/response.api';
 import { Hash } from '../helpers/hash';
 import { CustomerError } from '../helpers/customer-error';
 
 export class AuthController {
-  constructor(private service: UserService) {}
+  constructor(private service: TruckService) {}
 
   login = async (request: Request, response: Response, next: NextFunction) => {
     try {
-      const parsed = userSchemaLogin.parse(request.body);
-      const user = parsed as CreateUserInput;
-      const userFind = await this.service.findByPseudo(user.pseudo);
+      const parsed = truckSchemaLogin.parse(request.body);
+      const truck = parsed as CreateTruckInput;
+      const truckFind = await this.service.findByPseudo(truck.pseudo);
 
-      if (userFind && Hash.compare(user.password, userFind.password)) {
-        const data = UserTransformer.toUIone(userFind);
+      if (truckFind && Hash.compare(truck.password, truckFind.password)) {
+        const data = TruckTransformer.toUIone(truckFind);
         const access_token = AccessToken.sign(data);
         const refresh_token = RefreshToken.sign(data);
         return response.send(

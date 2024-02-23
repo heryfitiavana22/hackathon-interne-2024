@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { UserService } from '../user/user.service';
+import { TruckService } from '../truck/truck.service';
 import { AuthController } from './auth.controller';
+import { prisma } from '../database/prisma';
 
 const router = Router();
-const service = new UserService();
+const service = new TruckService(prisma);
 const controller = new AuthController(service);
 
 router.post('/auth/login', controller.login);
