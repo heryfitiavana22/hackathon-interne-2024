@@ -41,7 +41,7 @@ export function Login({}: LoginProps) {
               </div>
 
               <div>
-                <Button size="lg">Se connecter</Button>
+                <Button>Se connecter</Button>
               </div>
             </form>
             {/* </div> */}

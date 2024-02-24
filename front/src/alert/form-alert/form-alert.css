@@ -4,7 +4,6 @@
   gap: 15px;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  border: 1px solid red;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
@@ -61,7 +60,7 @@ H1 {
 }
 
 @media screen and (max-width: 640px) {
-   .form-alert-image{
+  .form-alert-image {
     display: none;
-   }
+  }
 }

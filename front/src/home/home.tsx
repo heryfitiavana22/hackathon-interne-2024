@@ -186,18 +186,18 @@ export function Home() {
             <div className="foteur">
               <div className="createur">
                 <p className="TitreCreateur"> Createur :</p>
-                <p className="nomCreateur">Dev.Team</p>
-                <p className="lieuCreateur">Antananarivo,101</p>
-                <p className="telCreateur">Tel : 0389029847</p>
+                <p className="TitreCreateur">Dev.Team</p>
+                <p className="TitreCreateur">Antananarivo,101</p>
+                <p className="TitreCreateur">Tel : 0389029847</p>
               </div>
 
               <div className="liens">
                 <p className="TitreLien">Liens</p>
-                <Link to="#">Alerter</Link>
+                <Link to="#" className='lien'>Alerter</Link>
                 <br />
-                <Link to="#">Connecter</Link>
+                <Link to="#" className='lien'>Connecter</Link>
                 <br />
-                <Link to="#">Payement </Link>
+                <Link to="#" className='lien'>Payement </Link>
               </div>
             </div>
             <div className="reseauSociaux">
