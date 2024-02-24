@@ -16,7 +16,6 @@ import InstaIcons from '../components/icons/insta';
 import ReactIcons from '../components/icons/react';
 import JsIcons from '../components/icons/js';
 
-
 export function Home() {
   const { refetchUser } = useAuth();
   const [showLoading, setShowLoading] = useState(true);
@@ -105,8 +104,15 @@ export function Home() {
 
               <div className="suivi">
                 <H1 className='Maps'>Maps pour suivre les trajets </H1>
-                 <p>On peut evidament suivre les trajets des camions qui ramace les ordures</p>
-                 <Button variant='secondary' className='btnSuivi'>Suivis</Button>
+                  <div className='coloneMaps'>
+                    <img className='imgMaps' src="GoogleMapTA.jpg" alt="" srcset="" width={500} height={280}/>
+                  <div className='MapPar'>
+                    <p>On peut evidament suivre les trajets des camions qui ramace les ordures</p>
+                    <Button className='btnSuivi'>Suivis</Button>
+                    
+                  </div>
+                 </div>
+                 
               </div>
 
         <div className="statistique">
