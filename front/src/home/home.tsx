@@ -69,6 +69,11 @@ export function Home() {
             Ensemble, rendons notre monde plus propre et plus vert <br /> Unis
             dans notre engagement pour une terre plus propre.
           </H6>
+          <Link to={'/tracking'}>
+            <Button variant="primary" size="lg">
+              <PayementIcons /> track
+            </Button>
+          </Link>
         </div>
 
         <div className="btnListe">
