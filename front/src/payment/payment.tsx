@@ -13,7 +13,6 @@ export function Payment() {
         <div className="container">
           <div className="message">
             <h1>Faites partie du changement</h1>
-            <h2>soutenez le développement urbain</h2>
             <img src="trash.png" alt="" className="trash-image" />
           </div>
 
