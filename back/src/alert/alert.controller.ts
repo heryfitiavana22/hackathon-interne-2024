@@ -27,7 +27,7 @@ export class AlertController {
     try {
       const parsed = alertNotPickedQuerySchema.parse(request.query);
       const alerts = await this.service.find({
-        where: { state: AlertState.NOT_PICKED },
+        where: { state: AlertState.NOT_PICKED, isPicked: false },
       });
       const data = AlertTransformer.toUI(alerts);
       const sorted = sortByProximity(parsed as any, data);
