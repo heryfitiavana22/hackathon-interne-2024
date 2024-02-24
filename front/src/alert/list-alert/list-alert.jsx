@@ -15,6 +15,42 @@ export function ListAlert() {
       image: 'assets/sary.jpg',
       distance: '10m',
     },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
     
   ];
 
@@ -22,11 +58,7 @@ export function ListAlert() {
     <>
       <div className="list-content">
         <div className="lc-text">
-          <H1> Liste des alerts</H1>
-          <p>
-            Ici, vous pouvez voir toutes les listes de toutes les alertes
-            signalées dans toute la ville.
-          </p>
+          <H1> Liste des alertes</H1>
         </div>
         <div className="lc-container">
           <CardAlert donnee={fako} />
