@@ -48,8 +48,8 @@ export function Home() {
           </div>
 
           <div className='btnMilay'>
-            <Button>Suivis </Button>
-            <Button className="login">Connecter</Button>
+            <Button variant='secondary'>Suivis Alerte</Button>
+            <Button className="login" variant='secondary'>Connecter</Button>
   
           </div>
        </div>
@@ -83,35 +83,9 @@ export function Home() {
           </div>
         </div>
       </div>
-
-      <div className="statistique">
-        <H1 className="titreState">Nos stats effectuer </H1>
-
-        <div className="liste">
-          <div className="textCams">
-            <div className="NombreCamion">
-              <CamionIcons className="CamionIcons" />
-            </div>
-            <p className="nbrs">50</p>
-          </div>
-
-          <div className="textDechet">
-            <div className="NombreDechet">
-              <TrashIcons className="TrashIcons" />
-            </div>
-            <p className="nbrs">50</p>
-          </div>
-
-          <div className="textAlert">
-            <div className="NombreAlert">
-              <AlertIcons className="TrashIcons" />
-            </div>
-            <p className="nbrs">50</p>
-          </div>
-        </div>
         
         <div className="avantage">
-          <H1 className="titreAvantage">Les avantage que  nous apportons  </H1>
+          <H1 className="titreAvantage">Les avantages que  nous apportons  </H1>
 
               <div className="classLiText">
                 < p className='LiText'>Améliore l'environnement : </p>
@@ -129,6 +103,39 @@ export function Home() {
                 <p>L'utilisation de l'IA pour optimiser les itinéraires de collecte permettra une utilisation plus efficace des ressources et réduira les coûts opérationnels.</p>
               </div>
 
+              <div className="suivi">
+                <H1 className='Maps'>Maps pour suivre les trajets </H1>
+                 <p>On peut evidament suivre les trajets des camions qui ramace les ordures</p>
+                 <Button variant='secondary' className='btnSuivi'>Suivis</Button>
+              </div>
+
+        <div className="statistique">
+        <H1 className="titreState">Nos stats effectuer </H1>
+
+        <div className="liste">
+          <div className="textCams">
+            <div className="NombreCamion">
+              <CamionIcons className="CamionIcons" />
+            </div>
+            <p className="nbrs">0</p>
+          </div>
+
+          <div className="textDechet">
+            <div className="NombreDechet">
+              <TrashIcons className="TrashIcons" />
+            </div>
+            <p className="nbrs">0</p>
+          </div>
+
+          <div className="textAlert">
+            <div className="NombreAlert">
+              <AlertIcons className="TrashIcons" />
+            </div>
+            <p className="nbrs">0</p>
+          </div>
+        </div>
+
+              <div className="foteurClass">
               <div className="foteur">
                 <div className="createur">
                   <p className='TitreCreateur'> Createur :</p>
@@ -146,12 +153,14 @@ export function Home() {
                 
 
               </div>
-              <div className="reseauSociaux">
-                < FacebookIcons />
-                < InstaIcons />
-                < ReactIcons />
-                < JsIcons />
+                <div className="reseauSociaux">
+                  < FacebookIcons />
+                  < InstaIcons />
+                  < ReactIcons />
+                  < JsIcons />
+                </div>
               </div>
+              
         </div>
       </div>
     </AuthenticatedGuard>
