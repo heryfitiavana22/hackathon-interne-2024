@@ -6,6 +6,7 @@ import { DateHelper } from '../../../helpers/date-helper';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../auth/use-auth';
 import { AlertService } from '../../alert.service';
+import { RemoteUrl } from '../../../helpers/remote-url';
 
 export default function CardAlert({ data }: CardAlertProps) {
   const { user } = useAuth();
@@ -19,7 +20,11 @@ export default function CardAlert({ data }: CardAlertProps) {
             <div className="lc-distance">
               <p>{10} pres de vous</p>
             </div>
-            <img src={item.imageURL} alt="sary" className="img" />
+            <img
+              src={RemoteUrl.alert(item.imageURL)}
+              alt="sary"
+              className="img"
+            />
           </div>
           <ul className="lc-list">
             <li>

@@ -1,12 +1,7 @@
 import axios from 'axios';
 import { Coords } from './ititnerary.type';
 
-const API_KEYs = [
-  'd9bc2289-8508-4219-bcff-2d7abdf09c07',
-  '7bdd7e22-2f20-4263-b833-15d3d703a874',
-  '9a09bb96-843a-4c3b-98bf-6618b033c2fe',
-  '70dab084-a84c-4301-bd03-620bc5fc704b',
-];
+const API_KEYs = ['e4422fcc-1845-4eb0-9b7e-45d98e213183'];
 const GRAPHHOPPER = 'https://graphhopper.com/api/';
 
 export class ItineraryService {
@@ -16,9 +11,13 @@ export class ItineraryService {
     // donc, il faut basculer à l'API_KEY suivant s'il atteint la limite
     for (let key of API_KEYs) {
       const response = await getResponse(from, to, key);
+      console.log(response);
+
       if (response.status === 200) {
         // number[][] to Coordinate[]
-        return coordsAdapter(response.data.paths[0].pointss.coordinates);
+        console.log('okkk');
+
+        return coordsAdapter(response.data.paths[0].points.coordinates);
       }
     }
 

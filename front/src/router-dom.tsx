@@ -6,6 +6,7 @@ import { ListAlert } from './alert/list-alert/list-alert';
 import Tracking from './maps/tracking/tracking';
 import ListeState from './alertState/list-state';
 import FormAlert from './alert/form-alert/form-alert';
+import Itinerary from './maps/itinerary/itinerary';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'itinerary/:lat/:long',
-    element: <Tracking />,
+    element: <Itinerary />,
   },
   {
     path: 'liststate',

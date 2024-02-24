@@ -56,10 +56,14 @@ export class AlertController {
 
   create = async (request: Request, response: Response, next: NextFunction) => {
     try {
+      console.log(request.body);
+
       const parsed = alertSchemaAdd.parse(request.body);
       const alert = parsed as CreateAlertInput;
+      const imageURL = request.file?.path.replace('public', '') || null;
       const newAlert = await this.service.create({
         ...alert,
+        imageURL,
       });
       const data = AlertTransformer.toUIone(newAlert);
       return response.send(ResponseAPI.success({ data }));

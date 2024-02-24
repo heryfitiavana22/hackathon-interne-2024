@@ -37,7 +37,7 @@ app.use(verifyToken);
 app.use(API_PREFIX, truckRouter);
 app.use(API_PREFIX, alertRouter);
 app.use((error: any, request: Request, response: Response, next: any) => {
-  // console.log(error);
+  console.log(error);
   if (error instanceof ZodError)
     return response
       .status(400)

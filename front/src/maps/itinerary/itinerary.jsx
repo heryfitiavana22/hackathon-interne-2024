@@ -7,7 +7,6 @@ import {
   Popup,
   useMapEvents,
 } from 'react-leaflet';
-import './itinerary.css';
 import 'leaflet/dist/leaflet.css';
 import { useParams } from 'react-router-dom';
 import { useItinerary } from './use-itinerary';
