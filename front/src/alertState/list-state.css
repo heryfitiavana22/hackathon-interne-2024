@@ -1,0 +1,214 @@
+.list-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* background-color: var(--secondary); */
+    background-image: url(assets/bg2.svg);
+    background-repeat: repeat;
+    width: 100%;
+    min-height: 100vh;
+    padding: 14px;
+  
+    .lc-text{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding:15px 0; 
+      color: var(--text);
+  
+      H1{
+        color: antiquewhite;
+        margin-bottom: 15px;
+      }
+      p{
+        margin-bottom: 10px;
+      }
+    }
+  
+    .lc-container{
+      display: grid;
+      width: 80%;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: 50% 50%;
+      gap: 15px;
+  
+      .lc-box {
+        display: flex;
+        /* align-items: center; */
+        /* justify-content: center; */
+        gap: 15px;
+        width: 100%;
+        height: 200px;
+        
+        border-radius: 15px;
+        background-color: var(--bg);
+        box-shadow: 10px 8px 21px -11px rgba(39,51,49,1);;
+        align-items: center;
+        padding:20px;
+        
+  
+        .lc-img{
+          position: relative;
+          .img {
+            display: flex;
+            /* border: 1px solid red;   */
+            width: 150px;
+            height: 150px;
+          }
+          .lc-distance{
+            position: absolute;
+            background-color: var(--white) ;
+            border: .5px solid var(--primary);
+            color : var(--text-light);
+            border-radius: 10px;
+            bottom: -5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left : 15px;
+            width: 120px;
+            height: 20px;
+  
+            p{
+              font-size: 13px;
+            }
+          }
+        }
+  
+        .lc-btn{
+          /* padding-top: 15px; */
+          display: flex;
+          /* position: absolute;  */
+          /* right: 15px; */
+          /* position: fixed; */
+          justify-content: end;
+          float: right;
+  
+        }
+        .lc-right {
+          width: 70%;
+          /* display: flex; */
+        }
+  
+        .lc-list{
+          list-style: none;
+          padding-left: 15px;
+          padding-bottom: 15px;
+          
+          li{
+            display: flex;
+            align-items: center;
+            gap : 10px
+          }
+          .grey{
+            color: var(--text-light);
+            padding-top: 2px;
+           }
+        }
+        
+      }
+  
+    }
+  }
+
+  .state{
+    display: flex;
+    float: right;
+  }
+  
+  
+  @media screen and (max-width: 1024px) {
+  
+  }
+  
+  @media screen and (max-width: 992px) {
+    .img{
+      width: 130px !important;
+      height: 130px !important;
+    }
+    .lc-list{
+      padding-left: 8px !important;
+    }
+  
+    .lc-box{
+      gap: 8px !important;
+      padding: 10px !important;
+    }
+    .lc-distance{
+      left: 9px !important;
+    }
+
+    .yes{
+      width: 34px !important;
+    }
+    .no{
+      width: 34px !important;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .lc-container{
+      display: flex !important;
+      flex-direction: column;
+      width: 65% !important;
+    }
+    .lc-distance{
+      left: 8px !important;
+    }
+
+    .yes{
+      width: 32px !important;
+    }
+    .no{
+      width: 32px !important;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .lc-container{
+      display: flex !important;
+      flex-direction: column;
+      width: 90% !important;
+    }
+    .img{
+      width: 120px !important;
+      height: 120px !important;
+    }
+  
+    .lc-distance{
+      width: 80px !important;   
+      height: 14px !important;
+    
+      p{
+        font-size: 8px !important;
+       
+      }
+    }
+    .list-content {
+      padding: 9px !important;
+    }
+    .lc-box{
+      height: 148px !important;
+  
+    }
+    
+    .lc-list{
+      padding-left: 8px !important;
+      padding-top: 8px !important;
+      padding-bottom: 0px !important;
+  
+      li{
+        padding-top: 3px !important;
+        font-size: 12px;
+      }
+    }
+
+    .yes{
+      width: 28px !important;
+    }
+    .no{
+      width: 28px !important;
+    }
+  }
+  
