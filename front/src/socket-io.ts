@@ -7,9 +7,7 @@ const subscribersOnTracking: SubTack[] = [];
 export let trucksTracked: TruckCoords[] = [];
 export const subscribeTracking = (s: SubTack) => subscribersOnTracking.push(s);
 socket.on('tracking', (trucks: any[]) => {
-  console.log('tracking');
   trucksTracked = trucks;
-  console.log(trucks);
 
   subscribersOnTracking.forEach((el) => el(trucks));
 });

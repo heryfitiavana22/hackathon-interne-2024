@@ -4,6 +4,8 @@ import { Home } from './home/home';
 import { Payment } from './payment/payment';
 import { ListAlert } from './alert/list-alert/list-alert';
 import Tracking from './maps/tracking/tracking';
+import ListeState from './alertState/list-state';
+import FormAlert from './alert/form-alert/form-alert';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
   {
     path: 'itinerary/:lat/:long',
     element: <Tracking />,
+  },
+  {
+    path: 'liststate',
+    element: <ListeState />,
+  },
+  {
+    path: 'set-alert',
+    element: <FormAlert />,
   },
 ]);
 export function RouterDom() {
