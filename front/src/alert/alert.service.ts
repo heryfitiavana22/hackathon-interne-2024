@@ -1,4 +1,4 @@
-import { getData } from '../helpers/repository';
+import { getData, updateDataById } from '../helpers/repository';
 import { Alert } from './alert.type';
 import { toast } from 'sonner';
 import queryString from 'query-string';
@@ -23,6 +23,13 @@ export class AlertService {
           resolve(null);
         },
       );
+    });
+  }
+
+  static setPickedAlert(alertId: number, truckId: number) {
+    return updateDataById('truck', alertId.toString(), {
+      isPicked: true,
+      truckId,
     });
   }
 }
