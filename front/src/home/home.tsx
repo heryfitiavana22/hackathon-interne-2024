@@ -73,9 +73,11 @@ export function Home() {
 
         <div className="btnListe">
           <div className="btnAlert">
-            <Button variant="secondary" size="lg">
-              <AjoutIcons /> Lancer une alerte
-            </Button>
+            <Link to={'/set-alert'}>
+              <Button variant="secondary" size="lg">
+                <AjoutIcons /> Lancer une alerte
+              </Button>
+            </Link>
           </div>
 
           <div className="btnPyement">
