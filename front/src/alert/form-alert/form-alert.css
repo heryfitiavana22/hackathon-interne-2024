@@ -1,0 +1,33 @@
+.form-alert-contenaire{
+    display: flex;
+    width: 800px;
+    height: 400px;
+}
+.form-alert-image{
+    width: 73%;
+}
+.form-alert-imgLabel{
+    margin-top: 86px;
+    margin-bottom: 15px;
+}
+.form-alert-lieuLabel{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 49px;
+    margin-top: 50px;
+}
+#form-alert-button{
+    background-color: #10a810;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+}
+#lieu{
+    font-size: 24px;
+}

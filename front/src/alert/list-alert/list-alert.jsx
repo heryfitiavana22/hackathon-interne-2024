@@ -24,6 +24,42 @@ export function ListAlert() {
       image: 'assets/sary.jpg',
       distance: '10m',
     },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
+    {
+      id: 1,
+      location: 'Antsobolo, Antananarivo',
+      date: '21/02/24',
+      coordonne: 'lavitra',
+
+      image: 'assets/sary.jpg',
+      distance: '10m',
+    },
     
   ];
   const { isLoading, data } = useQuery({
@@ -36,7 +72,7 @@ export function ListAlert() {
     <>
       <div className="list-content">
         <div className="lc-text">
-          <H1> Liste des alerts</H1>
+          <H1> Liste des alertes</H1>
         </div>
         <div className="lc-container">
           <CardAlert data={data.data} />
