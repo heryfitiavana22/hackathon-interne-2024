@@ -11,6 +11,10 @@ import PayementIcons from './../components/icons/payement';
 import TrashIcons from './../components/icons/trash';
 import AlertIcons from './../components/icons/alert';
 import { Link } from 'react-router-dom';
+import FacebookIcons from './../components/icons/facebook';
+import InstaIcons from '../components/icons/insta';
+import ReactIcons from '../components/icons/react';
+import JsIcons from '../components/icons/js';
 
 export function Home() {
   const { status } = useAuth();
@@ -41,19 +45,27 @@ export function Home() {
               <span className="maka">Maka</span>Fako
             </p>
           </div>
-          {status == 'guest' ? (
-            <Link to={'/login'}>
-              <Button className="login" size="lg">
-                Se connecter
+
+          <div className="btnMilay">
+            {status == 'guest' ? (
+              <Link to={'/login'}>
+                <Button className="login" size="lg">
+                  Se connecter
+                </Button>
+              </Link>
+            ) : (
+              <Link to={'/list'}>
+                <Button className="login" size="lg">
+                  Taches
+                </Button>
+              </Link>
+            )}{' '}
+            <Link to={'/liststate'} style={{ display: 'flex' }}>
+              <Button className="login" variant="secondary">
+                Suivis
               </Button>
             </Link>
-          ) : (
-            <Link to={'/list'}>
-              <Button className="login" size="lg">
-                Taches
-              </Button>
-            </Link>
-          )}
+          </div>
         </div>
 
         <div className="paragraphe">
@@ -90,29 +102,110 @@ export function Home() {
         </div>
       </div>
 
-      <div className="statistique">
-        <H1 className="titreState">Nos stats effectuer </H1>
+      <div className="avantage">
+        <H1 className="titreAvantage">Les avantages que nous apportons </H1>
 
-        <div className="liste">
-          <div className="textCams">
-            <div className="NombreCamion">
-              <CamionIcons className="CamionIcons" />
+        <div className="classLiText">
+          <p className="LiText">Améliore l'environnement : </p>
+          <p>
+            Une gestion plus efficace des déchets contribuera à réduire la
+            pollution et à préserver l'écosystème local.{' '}
+          </p>
+        </div>
+
+        <div className="classLiText">
+          <br /> <br />
+          <p className="LiText">Transparence : </p>
+          <p>
+            Les paiements en ligne offrent une traçabilité et une transparence
+            accrues dans la manière dont les fonds sont utilisés pour les
+            services de collecte des déchets.
+          </p>
+        </div>
+
+        <div className="classLiText">
+          <br /> <br />
+          <p className="LiText">Efficacité : </p>
+          <p>
+            L'utilisation de l'IA pour optimiser les itinéraires de collecte
+            permettra une utilisation plus efficace des ressources et réduira
+            les coûts opérationnels.
+          </p>
+        </div>
+
+        <div className="suivi">
+          <H1 className="Maps">Maps pour suivre les trajets </H1>
+          <div className="coloneMaps">
+            <img
+              className="imgMaps"
+              src="GoogleMapTA.jpg"
+              alt=""
+              srcset=""
+              width={500}
+              height={280}
+            />
+            <div className="MapPar">
+              <p>
+                On peut evidament suivre les trajets des camions qui ramace les
+                ordures
+              </p>
+              <Link to={'/tracking'}>
+                <Button className="btnSuivi">Map</Button>
+              </Link>
             </div>
-            <p className="nbrs">50</p>
+          </div>
+        </div>
+
+        <div className="statistique">
+          <H1 className="titreState">Nos stats effectuer </H1>
+
+          <div className="liste">
+            <div className="textCams">
+              <div className="NombreCamion">
+                <CamionIcons className="CamionIcons" />
+              </div>
+              <p className="nbrs">0</p>
+            </div>
+
+            <div className="textDechet">
+              <div className="NombreDechet">
+                <TrashIcons className="TrashIcons" />
+              </div>
+              <p className="nbrs">0</p>
+            </div>
+
+            <div className="textAlert">
+              <div className="NombreAlert">
+                <AlertIcons className="TrashIcons" />
+              </div>
+              <p className="nbrs">0</p>
+            </div>
           </div>
 
-          <div className="textDechet">
-            <div className="NombreDechet">
-              <TrashIcons className="TrashIcons" />
-            </div>
-            <p className="nbrs">50</p>
-          </div>
+          <div className="foteurClass">
+            <div className="foteur">
+              <div className="createur">
+                <p className="TitreCreateur"> Createur :</p>
+                <p className="nomCreateur">Dev.Team</p>
+                <p className="lieuCreateur">Antananarivo,101</p>
+                <p className="telCreateur">Tel : 0389029847</p>
+              </div>
 
-          <div className="textAlert">
-            <div className="NombreAlert">
-              <AlertIcons className="TrashIcons" />
+              <div className="liens">
+                <p className="TitreLien">Liens</p>
+                <Link to="#">Alerter</Link>
+                <br />
+                <Link to="#">Connecter</Link>
+                <br />
+                <Link to="#">Payement </Link>
+              </div>
             </div>
-            <p className="nbrs">50</p>
+            <div className="reseauSociaux">
+              <FacebookIcons />
+              <InstaIcons />
+              <ReactIcons />
+              <JsIcons />
+            </div>
           </div>
         </div>
       </div>
