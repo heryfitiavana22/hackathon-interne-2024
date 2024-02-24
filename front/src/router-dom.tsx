@@ -4,6 +4,7 @@ import { Home } from './home/home';
 import { Payment } from './payment/payment';
 import { ListAlert } from './alert/list-alert/list-alert';
 
+
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
   {
